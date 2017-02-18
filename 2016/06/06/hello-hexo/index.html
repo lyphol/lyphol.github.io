@@ -294,8 +294,7 @@
     <!-- Custom Head -->
     
 
-<link rel="stylesheet" href="/css/prism-duotone-light.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
     
@@ -498,8 +497,8 @@
     branch: master
 </code></pre><h3 id="静态资源生成"><a href="#静态资源生成" class="headerlink" title="静态资源生成"></a>静态资源生成</h3><p>此时最简单的配置已经完成，可以生成博客看看效果</p>
 <p>清空源目录，一般在更新设置更换主题后重新生成时需要</p>
-<pre class="line-numbers language-javascript"><code class="language-javascript">hexo clean
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code class="javascript">hexo clean
+</code></pre>
 <p>页面生成，更新文章后执行此命令</p>
 <pre><code>hexo generate
 </code></pre><p>本地预览页面，可以安装本地服务hexo-server</p>
@@ -1019,6 +1018,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?5+2z7ZZmFuZK5IcimlZbxw==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -1029,6 +1032,10 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
     
 </script>
 
