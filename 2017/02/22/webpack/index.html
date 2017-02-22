@@ -37,7 +37,7 @@
     
     <title>
         
-            标签: hexo | 
+            Webpack构建工具 | 
         
         闲卿
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="lyphol">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",构建工具,webpack">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -226,15 +226,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://lyphol.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: hexo | 闲卿">
+    <meta property="og:title" content="Webpack构建工具 | 闲卿">
     <meta property="og:image" content="https://lyphol.github.io/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="构建工具"> <meta property="og:article:tag" content="webpack"> 
 
+    
+        <meta property="article:published_time" content="Wed Feb 22 2017 20:44:25 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Feb 23 2017 01:00:16 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="标签: hexo | 闲卿">
+    <meta name="twitter:title" content="Webpack构建工具 | 闲卿">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://lyphol.github.io/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -242,13 +245,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://lyphol.github.io/tags/hexo/index.html" />
+        <link rel="canonical" href="https://lyphol.github.io/2017/02/22/webpack/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://lyphol.github.io/2017/02/22/webpack/index.html",
+    "headline": "Webpack构建工具",
+    "datePublished": "Wed Feb 22 2017 20:44:25 GMT+0800",
+    "dateModified": "Thu Feb 23 2017 01:00:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "lyphol",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "世间所有的相遇，都是久别重逢"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "闲卿",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",构建工具,webpack",
+    "description": "",
+}
+</script>
 
 
     
@@ -282,99 +315,498 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Webpack概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">Webpack概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Webpack使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">Webpack使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#项目初始化"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">项目初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Webpack"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装Webpack</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#项目结构搭建"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">项目结构搭建</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Webpack的配置"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Webpack的配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用功能介绍"><span class="post-toc-number">3.</span> <span class="post-toc-text">常用功能介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#loaders"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">loaders</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Plugins"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Plugins</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Devtool调试"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Devtool调试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#devServer"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">devServer</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="http://wx2.sinaimg.cn/large/818f4c91ly1fj0ps1cwxuj21hc0u0q99.jpg">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://wx3.sinaimg.cn/large/818f4c91ly1fj1z46ipgyj21hc0u0adw.jpg)">
+    
+            <p class="article-headline-p">
+                Webpack构建工具
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>lyphol</strong>
+        <span>2月 22, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/06/06/hello-hexo/">hello hexo</a></p>
-    </div>
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/webpack/">webpack</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/构建工具/">构建工具</a>
+    </ul>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-利用hexo+github pages搭建一个属于自己的博客
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
 
+    
 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/06/06/hello-hexo/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lyphol's avatar">
-            </div>
-            <div>
-                <strong>lyphol</strong>
-                <span>6月 06, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/其他/">其他</a>
-              </span>
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Webpack构建工具&url=https://lyphol.github.io/2017/02/22/webpack/index.html&pic=https://lyphol.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-            
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Webpack构建工具&url=https://lyphol.github.io/2017/02/22/webpack/index.html&via=lyphol" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
 
-            
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://lyphol.github.io/2017/02/22/webpack/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://lyphol.github.io/2017/02/22/webpack/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-            
-            
-        
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
+        <blockquote>
+<p>Webpack 是当下最热门的前端资源模块化管理和打包工具</p>
+</blockquote>
+<h2 id="Webpack概述"><a href="#Webpack概述" class="headerlink" title="Webpack概述"></a>Webpack概述</h2><p>Webpack可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。通过loader的转化，任何形式的资源都可以视作模块，CommonJs模块、CSS、图片、LESS、ES6模块等。</p>
+<p>Gulp的工作方式是在一个配置文件<code>gulpfile.js</code>中，通过指明对特定文件执行一定的任务，实现编译，压缩，组合等操作，Gulp会自动帮你完成这些操作。</p>
+<p>Webpack的工作方式是从一个主入口文件中如<code>main.js</code>，开始分析项目中的所有依赖文件，使用相应的loader处理它们，最后打包为一个或多个浏览器可识别的js文件。</p>
+<h2 id="Webpack使用"><a href="#Webpack使用" class="headerlink" title="Webpack使用"></a>Webpack使用</h2><h3 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h3><p>使用node npm初始化一个项目，方便模块管理</p>
+<pre><code>npm init
+</code></pre><p>此时你需要填写项目名称、描述、版本等，可以默认直接回车。然后会在项目根目录下形成<code>package.json</code>文件</p>
+<h3 id="安装Webpack"><a href="#安装Webpack" class="headerlink" title="安装Webpack"></a>安装Webpack</h3><pre><code>//全局安装webpack
+npm i webpack -g
+//项目中安装webpack
+npm i webpack --save-dev
+</code></pre><h3 id="项目结构搭建"><a href="#项目结构搭建" class="headerlink" title="项目结构搭建"></a>项目结构搭建</h3><ol>
+<li>我们可以在项目下建立两个目录，<code>source</code>和<code>dist</code>，source用于存放开发的源代码，dist存放打包后上线部署的代码</li>
+<li>在<code>source</code>目录下创建<code>index.html</code>，<code>main.js</code> 。index.js为生成展示页面的模板文件，main.js为入口文件，最后打包后会在<code>dist</code>目录下生成打包后的文件<code>bundle.js</code>和根据模板生成的页面文件index.js,并且在index.js中自动引入bundle.js</li>
+</ol>
+<h3 id="Webpack的配置"><a href="#Webpack的配置" class="headerlink" title="Webpack的配置"></a>Webpack的配置</h3><ol>
+<li><p>我们在项目根目录下新建<code>webpack.config.js</code> ，如果想要区分开发模式可发表模式，也可以新建<code>Webpack.develop.config.js</code>和<code>Webpack.public.config.js</code> 。</p>
+</li>
+<li><p><code>webpack.config.js</code>最后打包时可以在cli中直接使用<code>webpack</code>命令，其他命名的文件需要在<code>package.json</code>的脚本中配置相应命令，然后可以通过如下：</p>
+<pre><code class="json">//package.json
+&quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;webpack --config webpack.develop.config.js&quot;,
+    &quot;pub&quot;: &quot;webpack --config webpack.publish.config.js -p&quot;,
+    &quot;server&quot;: &quot;webpack-dev-server  --config webpack.develop.config.js --content-base src&quot;
+}
+</code></pre>
+<p>然后可以通过<code>npm dev</code>进行打包操作</p>
+</li>
+<li><p>webpack.config.js配置</p>
+<p>webpack配置主要分下面几个方面<code>入口和出口</code> ，<code>loader</code> ，<code>plugin</code> ，<code>devtool</code></p>
+<pre><code class="javascript">//引入相应的模块
+const webpack = require(&#39;webpack&#39;)
+const path = require(&#39;path&#39;)
+const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;)
+//作为模块导出
+module.exports = {
+  //1.webpack 入口和出口
+  entry: path.resolve(__dirname, &#39;./src/main.js&#39;),
+  output: {
+    path: path.resolve(__dirname, &#39;dist&#39;),
+    filename: &#39;bundle.js&#39;
+  },
 
-    
+  //2.webpack loader
+  module: {
+    rules: [
+      //babel-loader，转化ES6代码为ES5
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: &#39;babel-loader&#39;,
+          options: {
+            presets: [&#39;env&#39;]
+          }
+        }
+      },
+      //vue-loader，编译vue文件
+      {
+        test: /\.vue$/,
+        use: {
+          loader: &#39;vue-loader&#39;
+        }
+      },
+      //css-loader，编译css
+      {
+        test: /\.css$/,
+        use: [
+          &#39;style-loader&#39;, &#39;css-loader&#39;
+        ]
+      },
+      // 使用url-loader加载器  图片
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        use: &#39;url-loader?limit=8192&amp;name=images/[name].[ext]&#39;
+      },
+      // 使用url-loader加载器  字体
+      {
+        test: /\.(woff|svg|eot|ttf)\??.*$/,
+        use: &#39;url-loader?limit=8192&amp;name=fonts/[name].[ext]&#39;
+      }
+    ]
+  },
 
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
+  //3.plugins
+  plugins: [
+    //分离第三方的插件，将第三方代码抽出
+    new webpack.optimize.CommonsChunkPlugin({ name: &#39;vendors&#39;, filename: &#39;vendors.js&#39; }),
+    //自动生成html的插件，指定模板和需要引入的js
+    new HtmlWebpackPlugin({
+      template: &#39;./src/index.html&#39;,
+      htmlWebpackPlugin: {
+        &quot;files&quot;: {
+          &quot;js&quot;: [&quot;bundle.js&quot;, &quot;vendors.js&quot;]
+        }
+      },
+      // html压缩
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      }
+    }),
+    //热更新插件，和热更新服务一起使用，每次改动可以实时预览效果
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  //4.开发工具 热更新服务
+  devtool: &#39;eval&#39;,
+  devServer: {
+    contentBase: path.join(__dirname, &#39;./src&#39;), // 当前服务器监听的路径
+    hot: true,  // 热更新
+    port: 8000,  // 定义端口号
+    host: &#39;localhost&#39;,
+    open: true,    // 是否自动打开浏览器，
+    openPage: &#39;&#39;
+  }
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="常用功能介绍"><a href="#常用功能介绍" class="headerlink" title="常用功能介绍"></a>常用功能介绍</h2><h3 id="loaders"><a href="#loaders" class="headerlink" title="loaders"></a>loaders</h3><p>loaders使webpack有调用外部脚本的能力，loaders一般用来语法的转换和编译，如label-loader将ES6语法转换为ES5，vue-loader将vue文件编译为js等</p>
+<p>loaders需要单独通过npm安装，并且需要在<code>webpack.config.js</code>中的<code>modules</code>下配置，有如下几个方面：</p>
+<ul>
+<li><code>test</code> ：匹配处理文件的扩展名，形式为正则表达式</li>
+<li><code>loader</code> ：loader的名称</li>
+<li><code>include/exclude</code> ：手动添加需要处理的文件或忽略不需要处理的文件</li>
+<li><p><code>query</code> ：loader额外的设置选项</p>
+<p>​</p>
+</li>
+</ul>
+<p><strong>常用loaders</strong></p>
+<ol>
+<li><p>babel-loader</p>
+<p>用来转化ES6以及jsx等语法</p>
+<pre><code class="javascript">module: {
+  rules: [
+    //babel-loader，转化ES6代码为ES5
+    {
+      test: /\.js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: &#39;babel-loader&#39;,
+        options: {
+          presets: [&#39;env&#39;]
+        }
+      }
+    },
+  ]
+}
+</code></pre>
+<p>​</p>
+</li>
+<li><p>css-loader和style-loader</p>
+<p><code>css-loader</code>实现<code>@import</code>和<code>url()</code>功能，<code>style-loader</code>将计算后的样式添加到页面中,</p>
+<p>如果要实现css模块化，避免类名冲突，需要在css-loader中增加options</p>
+<pre><code class="javascript">module: {
+  rules: [
+    {
+      test: /\.css$/,
+      use: [
+        {
+            loader: &quot;style-loader&quot;
+        }, 
+        {
+            loader: &quot;css-loader&quot;,
+            options:{modules:true}//css模块化
+        }
+      ]
     }
-</script>
+  ]
+}
+</code></pre>
+<p>​</p>
+</li>
+<li><p>postcss-loader和autoprefixer插件</p>
+<p>根据can i use规则自动添加前缀，webpack配置文件中添加<code>postcss-loader</code>，在根目录新建<code>postcss.config.js</code></p>
+<pre><code class="javascript">//webpack.config.js
+module: {
+  rules: [
+    {
+      test: /\.css$/,
+      use: [
+        {
+            loader: &quot;style-loader&quot;
+        }, 
+        {
+            loader: &quot;css-loader&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<pre><code class="javascript">//postcss.config.js
+module.exports = {
+    plugins: [
+        require(&#39;autoprefixer&#39;)
+    ]
+}
+</code></pre>
+<p>​</p>
+</li>
+<li><p>当然如果你使用了CSS预编译，你可以添加<code>less-loader</code> ，<code>sass-loader</code> ，<code>stylus-loader</code>等</p>
+</li>
+</ol>
+<h3 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h3><p>插件用来扩展webpack功能，插件的使用同样需要npm安装，然后在<code>wenpack.config.js</code>中的<code>plugins</code>中配置</p>
+<p><strong>常用插件</strong></p>
+<ol>
+<li><p>webpack.optimize.CommonsChunkPlugin</p>
+<p>分离第三方代码</p>
+<pre><code class="javascript">plugins:[
+  new webpack.optimize.CommonsChunkPlugin({ name: &#39;vendors&#39;, filename: &#39;vendors.js&#39; }),
+]
+</code></pre>
+<p>​</p>
+</li>
+<li><p>HtmlWebpackPlugin</p>
+<p>根据模板自动生成html,并引入相应js</p>
+<pre><code class="javascript">npm i html-webpack-plugin --save-dev
+</code></pre>
+<pre><code class="javascript">const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;)
+plugins:[
+  //自动生成html的插件，指定模板和需要引入的js
+  new HtmlWebpackPlugin({
+    template: &#39;./src/index.html&#39;,
+    htmlWebpackPlugin: {
+      &quot;files&quot;: {
+        &quot;js&quot;: [&quot;bundle.js&quot;, &quot;vendors.js&quot;]
+      }
+    },
+    // html压缩
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeAttributeQuotes: true
+    }
+  }),
+]
+</code></pre>
+</li>
+<li><p>HotModuleReplacementPlugin</p>
+<p>文件修改后进行热更新,需配合webpack-dev-server使用</p>
+<pre><code class="javascript">plugins:[
+  new webpack.HotModuleReplacementPlugin()
+],
+</code></pre>
+</li>
+</ol>
+<h3 id="Devtool调试"><a href="#Devtool调试" class="headerlink" title="Devtool调试"></a>Devtool调试</h3><p>打包后的代码不容易跟踪调试，<code>source maps</code>可以帮我们解决，在<code>webpack.config.js</code>中配置</p>
+<pre><code class="javascript">devtool: &#39;eval-source-map&#39;
+</code></pre>
+<p>devtool有多种配置选项，如下：</p>
+<table>
+<thead>
+<tr>
+<th>devtool</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source-map</td>
+<td>在一个单独的文件中产生一个完整且功能完全的文件。这个文件具有最好的<code>source map</code>，但是它会减慢打包速度</td>
+</tr>
+<tr>
+<td>cheap-module-source-map</td>
+<td>在一个单独的文件中生成一个不带列映射的<code>map</code>，不带列映射提高了打包速度，但是也使得浏览器开发者工具只能对应到具体的行，不能对应到具体的列（符号），会对调试造成不便</td>
+</tr>
+<tr>
+<td>eval-source-map</td>
+<td>使用<code>eval</code>打包源文件模块，在同一个文件中生成干净的完整的<code>source map</code>。这个选项可以在不影响构建速度的前提下生成完整的<code>sourcemap</code>，但是对打包后输出的JS文件的执行具有性能和安全的隐患。在开发阶段这是一个非常好的选项，在生产阶段则一定不要启用这个选项</td>
+</tr>
+<tr>
+<td>cheap-module-eval-source-map</td>
+<td>这是在打包文件时最快的生成<code>source map</code>的方法，生成的<code>Source Map</code> 会和打包后的<code>JavaScript</code>文件同行显示，没有列映射，和<code>eval-source-map</code>选项具有相似的缺点</td>
+</tr>
+</tbody>
+</table>
+<h3 id="devServer"><a href="#devServer" class="headerlink" title="devServer"></a>devServer</h3><p>开启服务，实现实时刷新等功能</p>
+<pre><code>npm i webpack-dev-server --save-dev
+</code></pre><pre><code class="javascript">devServer: {
+    contentBase: path.join(__dirname, &#39;./src&#39;), // 当前服务器监听的路径
+    hot: true,  // 热更新，也可以是inline:true
+    port: 8000,  // 定义端口号
+    host: &#39;localhost&#39;,
+    open: true,    // 是否自动打开浏览器，
+    openPage: &#39;&#39;
+}
+</code></pre>
+
+        
+    
 
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/02/16/tcp/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -591,6 +1023,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
